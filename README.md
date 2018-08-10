@@ -1,6 +1,7 @@
 
 **An *attempt* at a quicksort implementation in C**
-* The header (sjqsort.h) file contains the actual definition for quick_sort() and swap().
+* The header (sjqsort.h) file contains the actual definition for quick_sort() and swap(). However, it **MUST** be in the same directory as sample_main.c (it is the header file, after all :thinking:)
+
 * sample_main.c just contains a main() generating an array of random numbers, printing it, calling quick_sort(), then again printing it, sorted in place.
 
 **Compilation instructions**:
