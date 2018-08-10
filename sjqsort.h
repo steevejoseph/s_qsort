@@ -5,20 +5,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void printArray(int *array, int n);
-void bequick(int *array, int size);
-void quickswap(int *array, int *a, int *b);
+void print_array(int *array, int n);
+void quick_sort(int *array, int size);
+void swap(int *array, int *a, int *b);
 
 // Swaps the values at two addresses in an array of ints.
-// Used solely for bequick().
-void quickswap(int *array, int *a, int *b)
+// Used solely for quick_sort().
+void swap(int *array, int *a, int *b)
 {
 	int tmp;
 	tmp = *a; *a = *b; *b = tmp;
 }
 
 // Prints an array when given an array an a number of elements.
-void printArray(int *array, int n)
+void print_array(int *array, int n)
 {
 	int i;
 
@@ -27,13 +27,13 @@ void printArray(int *array, int n)
 		printf("%d ", array[i]);
 	}
 
-	printf("\n");			
+	printf("\n");
 }
 
 // Function that takes in a pointer to an array and
-// the number of elements in the array, then 
+// the number of elements in the array, then
 // sorts it quick-sort style, with a 0th-index pivot.
-void bequick(int *array, int size)
+void quick_sort(int *array, int size)
 {
 	int i, *pivot,*rptr, *lptr;
 
@@ -60,8 +60,7 @@ void bequick(int *array, int size)
 		if (*rptr < *pivot && *lptr > *pivot)
 		{
 			//printf("swapped lptr: <%d> & rptr: <%d>\n", *lptr, *rptr);
-			quickswap(array, lptr, rptr);
-
+			swap(array, lptr, rptr);
 			lptr++;
 			rptr--;
 		}
@@ -88,17 +87,16 @@ void bequick(int *array, int size)
 			lptr++;
 			rptr--;
 		}
-
 	}
 
 	//printf("post loop swapping <%d> & <%d>\n", *pivot, *rptr);
 	//fflush(stdout);
 
 	// swap the pivot with the crossed-over right pointer.
-	quickswap(array, pivot, rptr);
+	swap(array, pivot, rptr);
 
 	// recursive calls to left and right partition of array,
-	// partitoned by the left pointer. 
-	bequick(array, (rptr - array));
-	bequick(lptr, &(array[size]) - lptr);
+	// partitoned by the left pointer.
+	quick_sort(array, (rptr - array));
+	quick_sort(lptr, &(array[size]) - lptr);
 }
