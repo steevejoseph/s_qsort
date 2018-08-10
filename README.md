@@ -21,7 +21,7 @@ Sorted:
 ```
 
 [**A good visualization of a (slightly) different implementation**](https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/visualize/)
-* typically best with array size of at least 5, an an Array Layout.
+* typically best with array size of at least 5, and an Array Layout.
 * in this visualization, they choose the last index of their array as the pivot (I chose to use the 0th).
 
 [**Quick Sort at scale**](https://www.youtube.com/watch?v=8hEyhs3OV1w)
