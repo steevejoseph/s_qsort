@@ -5,9 +5,15 @@
 * sample_main.c just contains a main() generating an array of random numbers, printing it, calling quick_sort(), then again printing it, sorted in place.
 
 **Compilation instructions**:
+
+From cmd/terminal:
 1. `gcc -o quickie sample_main.c`
 
 2. `./quickie`
+
+From an IDE:
+
+1. \*whatever the build and run command is*
 
 
 **Sample output**:
